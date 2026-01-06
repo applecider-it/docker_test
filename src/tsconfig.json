@@ -9,10 +9,15 @@
     "noEmit": true,
 
     "jsx": "react-jsx",
-    "types": ["node"]
+    "types": ["node"],
+
+    "baseUrl": "./resources/js",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
   "include": [
-    "resources/**/*.ts",
-    "resources/**/*.tsx"
+    "resources/js/**/*.ts",
+    "resources/js/**/*.tsx"
   ]
 }
