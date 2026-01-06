@@ -20,6 +20,7 @@ services:
     container_name: php-fpm
     environment:
       APP_ENV: local
+      #APP_ENV: production
 
   node:
     image: node:20-alpine

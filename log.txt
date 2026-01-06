@@ -1,4 +1,10 @@
 
+-----------------------------------
+
+
+docker compose exec nginx ls -l /var/www/html
+
+-----------------------------------
 
 docker compose run --rm node npm install -D tailwindcss@^3 postcss autoprefixer
 

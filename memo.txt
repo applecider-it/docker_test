@@ -19,5 +19,15 @@ docker compose down
 docker compose up --build
 
 
-docker compose exec nginx ls -l /var/www/html
+-----------------------------------
+
+ビルド
+
+docker compose run --rm node npm run build
+
+docker-compose.yml
+APP_ENV
+変更
+
+-----------------------------------
 
