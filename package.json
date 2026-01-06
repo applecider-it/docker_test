@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/resources/input.css -o ./src/public/build/css/app.css --watch",
+    "build": "npx tailwindcss -i ./src/resources/input.css -o ./src/public/build/css/app.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19"
+  }
+}

@@ -14,6 +14,16 @@ services:
 
   php:
     build: ./docker/php
+    user: "1000:1000"
     volumes:
       - ./src:/var/www/html
     container_name: php-fpm
+
+  node:
+    image: node:20-alpine
+    user: "1000:1000"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c "npm install && npm run dev"
+    tty: true
