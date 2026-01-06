@@ -1,10 +1,11 @@
 import { defineConfig } from "vite";
 import fullReload from "vite-plugin-full-reload";
 import react from "@vitejs/plugin-react";
+import vue from "@vitejs/plugin-vue";
 import path from "path";
 
 export default defineConfig({
-  plugins: [fullReload(["resources/views/**/*.php"]), react()],
+  plugins: [fullReload(["resources/views/**/*.php"]), react(), vue()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./resources/js"),

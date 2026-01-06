@@ -39,4 +39,5 @@ composer dump-autoload
 
 docker compose exec php composer require vlucas/phpdotenv
 
+docker compose exec node npm install -D vue @vitejs/plugin-vue
 

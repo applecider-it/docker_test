@@ -10,7 +10,7 @@ function App() {
 }
 
 ReactDOM.createRoot(
-  document.getElementById('app')!
+  document.getElementById('react')!
 ).render(
   <React.StrictMode>
     <App />

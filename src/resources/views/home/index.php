@@ -15,8 +15,9 @@ use App\Services\Frontend\Vite;
     <h1 class="text-3xl font-bold text-blue-600">
         Vite + Tailwind v3 OK
     </h1>
-    <div>
-        <div id="app"></div>
+    <div class="space-y-2">
+        <div id="react" class="border-2"></div>
+        <div id="vue" class="border-2"></div>
     </div>
 </body>
 
