@@ -14,7 +14,7 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       input: [
-        'resources/app.js',
+        'resources/app.ts',
         'resources/app.css',
       ],
     },

@@ -20,3 +20,9 @@ docker compose run --rm node npm install -D \
 
 
 docker compose run --rm node npm install -D vite-plugin-full-reload
+
+docker compose exec node npm install -D typescript @types/node
+
+docker compose exec node npx tsc -v
+
+mv vite.config.js vite.config.ts
