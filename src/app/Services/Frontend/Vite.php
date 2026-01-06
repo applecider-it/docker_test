@@ -18,13 +18,13 @@ class Vite
         if (self::isDev()) {
             $val = '
                 <script type="module">
-                    import RefreshRuntime from "http://localhost:5173/@react-refresh"
+                    import RefreshRuntime from "' . self::devUrl() . '/@react-refresh"
                     RefreshRuntime.injectIntoGlobalHook(window)
                     window.$RefreshReg$ = () => {}
                     window.$RefreshSig$ = () => (type) => type
                     window.__vite_plugin_react_preamble_installed__ = true
                 </script>
-                <script type="module" src="http://localhost:5173/@vite/client"></script>
+                <script type="module" src="' . self::devUrl() . '/@vite/client"></script>
             ';
         }
 
@@ -35,7 +35,7 @@ class Vite
     public static function asset(string $entry): string
     {
         if (self::isDev()) {
-            return 'http://localhost:5173/' . $entry;
+            return self::devUrl() . '/' . $entry;
         } else {
             if (self::$manifest === null) {
                 $path = APP_ROOT . '/public/assets/.vite/manifest.json';
@@ -50,5 +50,11 @@ class Vite
     private static function isDev(): bool
     {
         return $_ENV['APP_ENV'] === 'local';
+    }
+
+    /** 開発環境のURL */
+    private static function devUrl(): string
+    {
+        return 'http://localhost:5173';
     }
 }
