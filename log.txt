@@ -26,3 +26,10 @@ docker compose exec node npm install -D typescript @types/node
 docker compose exec node npx tsc -v
 
 mv vite.config.js vite.config.ts
+
+docker compose exec node sh
+
+npm install react react-dom
+npm install -D @vitejs/plugin-react
+
+npm install -D @types/react @types/react-dom

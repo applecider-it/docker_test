@@ -16,6 +16,13 @@ function vite_asset(string $entry): string
 
 <head>
     <?php if (getenv('APP_ENV') === 'local'): ?>
+        <script type="module">
+            import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+            RefreshRuntime.injectIntoGlobalHook(window)
+            window.$RefreshReg$ = () => {}
+            window.$RefreshSig$ = () => (type) => type
+            window.__vite_plugin_react_preamble_installed__ = true
+        </script>
         <script type="module" src="http://localhost:5173/@vite/client"></script>
         <link rel="stylesheet" href="http://localhost:5173/resources/app.css">
         <script type="module" src="http://localhost:5173/resources/app.ts"></script>
@@ -29,6 +36,9 @@ function vite_asset(string $entry): string
     <h1 class="text-3xl font-bold text-blue-600">
         Vite + Tailwind v3 OK
     </h1>
+    <div>
+        <div id="app"></div>
+    </div>
 </body>
 
 </html>

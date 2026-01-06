@@ -8,11 +8,11 @@
     "skipLibCheck": true,
     "noEmit": true,
 
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "types": ["node"]
   },
   "include": [
     "resources/**/*.ts",
-    "resources/**/*.js"
+    "resources/**/*.tsx"
   ]
 }
