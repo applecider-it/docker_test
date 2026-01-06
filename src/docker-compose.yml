@@ -1,5 +1,7 @@
 version: "3.9"
 
+name: docker_wsl
+
 services:
   nginx:
     image: nginx:alpine

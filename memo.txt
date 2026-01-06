@@ -2,12 +2,7 @@
 
 cd /home/owner/workspace/tmp/docker_test/src
 
-
-cd /home/owner/workspace/tmp/docker_test
-
 -----------------------------------
-
-cd /home/owner/workspace/tmp/docker_test
 
 docker compose up -d --build
 
