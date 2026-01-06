@@ -1,22 +1,14 @@
+<?php
+
+use App\Services\Frontend\Vite;
+?>
 <!doctype html>
 <html>
 
 <head>
-    <?php if (getenv('APP_ENV') === 'local'): ?>
-        <script type="module">
-            import RefreshRuntime from 'http://localhost:5173/@react-refresh'
-            RefreshRuntime.injectIntoGlobalHook(window)
-            window.$RefreshReg$ = () => {}
-            window.$RefreshSig$ = () => (type) => type
-            window.__vite_plugin_react_preamble_installed__ = true
-        </script>
-        <script type="module" src="http://localhost:5173/@vite/client"></script>
-        <link rel="stylesheet" href="http://localhost:5173/resources/css/app.css">
-        <script type="module" src="http://localhost:5173/resources/js/app.ts"></script>
-    <?php else: ?>
-        <link rel="stylesheet" href="<?= vite_asset('resources/css/app.css') ?>">
-        <script type="module" src="<?= vite_asset('resources/js/app.ts') ?>"></script>
-    <?php endif; ?>
+    <?= Vite::init() ?>
+    <link rel="stylesheet" href="<?= Vite::asset('resources/css/app.css') ?>">
+    <script type="module" src="<?= Vite::asset('resources/js/app.ts') ?>"></script>
 </head>
 
 <body class="p-8">

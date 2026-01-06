@@ -1,5 +1,8 @@
 <?php
 
+use Dotenv\Dotenv;
+
 define('APP_ROOT', dirname(__DIR__));
 
-require __DIR__ . '/helpers.php';
+$dotenv = Dotenv::createImmutable(APP_ROOT);
+$dotenv->load();
