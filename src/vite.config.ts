@@ -3,7 +3,7 @@ import fullReload from "vite-plugin-full-reload";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  plugins: [fullReload(["public/*.php"]), react()],
+  plugins: [fullReload(["resources/views/**/*.php"]), react()],
   server: {
     host: "0.0.0.0", // ← これが必須
     port: 5173,
