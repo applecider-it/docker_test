@@ -6,5 +6,11 @@ docker compose run --rm node npx tailwindcss init
 
 -----------------------------------
 
+docker compose run --rm node npm install -D \
+  vite \
+  tailwindcss@^3 \
+  postcss \
+  autoprefixer
 
 
+docker compose run --rm node npm install -D vite-plugin-full-reload
