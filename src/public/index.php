@@ -17,11 +17,11 @@ function vite_asset(string $entry): string
 <head>
     <?php if (getenv('APP_ENV') === 'local'): ?>
         <script type="module" src="http://localhost:5173/@vite/client"></script>
-        <link rel="stylesheet" href="http://localhost:5173/src/resources/app.css">
-        <script type="module" src="http://localhost:5173/src/resources/app.js"></script>
+        <link rel="stylesheet" href="http://localhost:5173/resources/app.css">
+        <script type="module" src="http://localhost:5173/resources/app.js"></script>
     <?php else: ?>
-        <link rel="stylesheet" href="<?= vite_asset('src/resources/app.css') ?>">
-        <script type="module" src="<?= vite_asset('src/resources/app.js') ?>"></script>
+        <link rel="stylesheet" href="<?= vite_asset('resources/app.css') ?>">
+        <script type="module" src="<?= vite_asset('resources/app.js') ?>"></script>
     <?php endif; ?>
 </head>
 
