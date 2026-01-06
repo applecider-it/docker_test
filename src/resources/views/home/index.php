@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <?php if (getenv('APP_ENV') === 'local'): ?>
+        <script type="module">
+            import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+            RefreshRuntime.injectIntoGlobalHook(window)
+            window.$RefreshReg$ = () => {}
+            window.$RefreshSig$ = () => (type) => type
+            window.__vite_plugin_react_preamble_installed__ = true
+        </script>
+        <script type="module" src="http://localhost:5173/@vite/client"></script>
+        <link rel="stylesheet" href="http://localhost:5173/resources/css/app.css">
+        <script type="module" src="http://localhost:5173/resources/js/app.ts"></script>
+    <?php else: ?>
+        <link rel="stylesheet" href="<?= vite_asset('resources/css/app.css') ?>">
+        <script type="module" src="<?= vite_asset('resources/js/app.ts') ?>"></script>
+    <?php endif; ?>
+</head>
+
+<body class="p-8">
+    <h1 class="text-3xl font-bold text-blue-600">
+        Vite + Tailwind v3 OK
+    </h1>
+    <div>
+        <div id="app"></div>
+    </div>
+</body>
+
+</html>

@@ -14,7 +14,7 @@ export default defineConfig({
     emptyOutDir: true,
     manifest: true,
     rollupOptions: {
-      input: ["resources/app.ts", "resources/app.css"],
+      input: ["resources/js/app.ts", "resources/css/app.css"],
     },
   },
 });
