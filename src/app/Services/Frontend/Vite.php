@@ -13,7 +13,7 @@ class Vite
         static $manifest = null;
 
         if ($manifest === null) {
-            $path = __DIR__ . '/assets/.vite/manifest.json';
+            $path = APP_ROOT . '/public/assets/.vite/manifest.json';
             $manifest = json_decode(file_get_contents($path), true);
         }
 
