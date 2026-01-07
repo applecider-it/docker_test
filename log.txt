@@ -52,3 +52,7 @@ SELECT * FROM users;
 
 
 -----------------------------------
+
+docker compose exec php composer require illuminate/database
+
+

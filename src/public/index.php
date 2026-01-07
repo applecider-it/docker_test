@@ -2,4 +2,4 @@
 
 require_once dirname(__DIR__) . '/bootstrap.php';
 
-(new App\Controllers\HomeController)->index($pdo);
+(new App\Controllers\HomeController)->index();
