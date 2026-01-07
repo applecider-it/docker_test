@@ -41,3 +41,14 @@ docker compose exec php composer require vlucas/phpdotenv
 
 docker compose exec node npm install -D vue @vitejs/plugin-vue
 
+-----------------------------------
+
+INSERT INTO users (name) VALUES
+('テスト１'),
+('テスト２'),
+('テスト３');
+
+SELECT * FROM users;
+
+
+-----------------------------------

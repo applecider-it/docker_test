@@ -24,3 +24,43 @@ APP_ENV
 
 -----------------------------------
 
+MYSQL
+
+docker compose exec mysql mysql -uapp -p
+
+secret
+
+use app
+
+---
+
+docker compose exec \
+  -e MYSQL_PWD=secret \
+  mysql mysql -uapp app
+
+---
+
+テーブル作成
+
+docker compose exec -T \
+  -e MYSQL_PWD=secret \
+  mysql mysql -uapp app < database/sqls/20260107_0000_create_users.sql
+
+---
+
+テストデータ追加
+
+docker compose exec -T \
+  -e MYSQL_PWD=secret \
+  mysql mysql \
+  --default-character-set=utf8mb4 \
+  -uapp app <<'SQL'
+INSERT INTO users (name) VALUES
+('テスト１'),
+('テスト２'),
+('テスト３');
+SQL
+
+-----------------------------------
+
+
