@@ -62,3 +62,8 @@ composer require doctrine/dbal
 
 composer require symfony/cache
 
+-----------------------------------
+
+
+composer require laminas/laminas-db
+

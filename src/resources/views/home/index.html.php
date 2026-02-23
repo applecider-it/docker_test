@@ -27,6 +27,13 @@
                 echo $user->getId() . ' - ' . $user->getName() . PHP_EOL;
             }
             ?></pre>
+
+    <h3 class="app-h3">Laminas</h3>
+    <pre><?php
+            foreach ($data['usersL'] as $user) {
+                echo $user['id'] . ' - ' . $user['name'] . PHP_EOL;
+            }
+            ?></pre>
 </div>
 
 </div>

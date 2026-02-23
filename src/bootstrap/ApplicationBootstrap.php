@@ -9,6 +9,8 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
 use Doctrine\DBAL\DriverManager;
 
+use Laminas\Db\Adapter\Adapter;
+
 /**
  * ブートストラップ
  */
@@ -22,6 +24,7 @@ class ApplicationBootstrap
         $this->eloquent();
         $this->pdo();
         $this->doctrine();
+        $this->laminas();
     }
 
     /** コアの初期化 */
@@ -99,6 +102,23 @@ class ApplicationBootstrap
             $entityManager = new EntityManager($connection, $config);
 
             return $entityManager;
+        });
+    }
+
+    /** laminasの初期化 */
+    private function laminas()
+    {
+        app()->singleton('laminas', function () {
+            $adapter = new Adapter([
+                'driver'   => 'Pdo_Mysql',
+                'hostname' => 'mysql',
+                'database' => 'app',
+                'username' => 'app',
+                'password' => 'secret',
+                'charset'  => 'utf8mb4',
+            ]);
+
+            return $adapter;
         });
     }
 }

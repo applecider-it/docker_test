@@ -9,6 +9,7 @@
     "illuminate/database": "^12.45",
     "doctrine/orm": "^3.6",
     "doctrine/dbal": "^4.4",
-    "symfony/cache": "^7.3"
+    "symfony/cache": "^7.3",
+    "laminas/laminas-db": "^2.20"
   }
 }
