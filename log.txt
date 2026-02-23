@@ -57,13 +57,13 @@ docker compose exec php composer require illuminate/database
 
 -----------------------------------
 
-composer require doctrine/orm
-composer require doctrine/dbal
+docker compose exec php composer require doctrine/orm
+docker compose exec php composer require doctrine/dbal
 
-composer require symfony/cache
+docker compose exec php composer require symfony/cache
 
 -----------------------------------
 
 
-composer require laminas/laminas-db
+docker compose exec php composer require laminas/laminas-db
 
