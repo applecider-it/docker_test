@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\User;
+use App\Doctrine\User as UserD;
 
 /**
  * ホームコントローラー
@@ -13,14 +14,25 @@ class HomeController
     public function index()
     {
         $pdo = app('pdo');
+        $doctrine = app('doctrine');
 
         //User::create(['name' => 'コントローラーから追加']);
 
         $users = User::all();
 
         $stmt = $pdo->query('SELECT * FROM users');
-        $usersArray = $stmt->fetchAll();
+        $usersP = $stmt->fetchAll();
 
-        include(APP_ROOT . '/resources/views/home/index.php');
+        $usersD = $doctrine->createQueryBuilder()
+            ->select('u')
+            ->from(UserD::class, 'u')
+            ->where('u.id > :id')
+            ->setParameter('id', 8)
+            ->getQuery()
+            ->getResult();
+
+        (fn($data) => include(APP_VIEW . '/home/index.html.php'))(
+            compact('users', 'usersP', 'usersD')
+        );
     }
 }

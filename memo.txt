@@ -9,6 +9,8 @@ http://localhost:8080
 
 docker compose down
 
+docker compose up
+
 docker compose up --build
 
 -----------------------------------

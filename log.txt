@@ -55,4 +55,10 @@ SELECT * FROM users;
 
 docker compose exec php composer require illuminate/database
 
+-----------------------------------
+
+composer require doctrine/orm
+composer require doctrine/dbal
+
+composer require symfony/cache
 

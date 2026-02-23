@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  /* ボタン */
+
+  .app-h2 {
+    @apply mb-3 text-blue-500 text-xl font-bold;
+  }
+
+  .app-h3 {
+    @apply my-3 text-blue-500 text-lg;
+  }
+}
