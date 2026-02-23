@@ -9,7 +9,7 @@
     @apply text-2xl font-bold tracking-tight text-gray-800 border-l-8 pl-4 border-blue-300 mb-4;
   }
   .app-h3 {
-    @apply text-xl font-semibold text-gray-700 mb-3;
+    @apply text-xl font-semibold text-blue-700 my-3;
   }
 
 

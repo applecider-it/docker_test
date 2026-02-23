@@ -1,6 +1,6 @@
 <?php
 
-use App\Services\Javascript\Vite;
+use App\Services\Javascript\ViteService;
 ?>
 <!doctype html>
 <html lang="ja">
@@ -8,9 +8,9 @@ use App\Services\Javascript\Vite;
 <head>
     <meta charset="UTF-8">
 
-    <?= Vite::init() ?>
-    <link rel="stylesheet" href="<?= Vite::asset('resources/css/app.css') ?>">
-    <script type="module" src="<?= Vite::asset('resources/js/entrypoints/app.ts') ?>"></script>
+    <?= ViteService::init() ?>
+    <link rel="stylesheet" href="<?= ViteService::asset('resources/css/app.css') ?>">
+    <script type="module" src="<?= ViteService::asset('resources/js/entrypoints/app.ts') ?>"></script>
 </head>
 
 <body>

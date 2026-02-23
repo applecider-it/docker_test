@@ -5,7 +5,7 @@ namespace App\Services\Javascript;
 /**
  * Vite管理
  */
-class Vite
+class ViteService
 {
     /** マニフェストのキャッシュ */
     private static $manifest = null;
