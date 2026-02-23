@@ -10,7 +10,7 @@ use App\Services\Javascript\Vite;
 
     <?= Vite::init() ?>
     <link rel="stylesheet" href="<?= Vite::asset('resources/css/app.css') ?>">
-    <script type="module" src="<?= Vite::asset('resources/js/app.ts') ?>"></script>
+    <script type="module" src="<?= Vite::asset('resources/js/entrypoints/app.ts') ?>"></script>
 </head>
 
 <body>
