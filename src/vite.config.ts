@@ -23,7 +23,9 @@ export default defineConfig({
     rollupOptions: {
       input: [
         "resources/js/entrypoints/app.ts",
-        "resources/js/entrypoints/index.ts",
+        "resources/js/entrypoints/home.ts",
+        "resources/js/entrypoints/dummy.ts",
+
         "resources/css/app.css",
       ],
     },

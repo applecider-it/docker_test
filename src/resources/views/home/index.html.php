@@ -1,4 +1,10 @@
+<?php
+
+use App\Services\Javascript\Vite;
+?>
 <?php (fn() => include(APP_VIEW . '/layouts/header.html.php'))(); ?>
+
+<script type="module" src="<?= Vite::asset('resources/js/entrypoints/home.ts') ?>"></script>
 
 <h2 class="app-h2">Home</h2>
 
