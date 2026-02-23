@@ -14,8 +14,10 @@ use App\Services\Javascript\Vite;
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold text-gray-100 p-4 bg-slate-400">
-        Vite + Tailwind v3 OK
-    </h1>
+    <a href="/">
+        <h1 class="text-3xl font-bold text-gray-100 p-4 bg-slate-400">
+            Vite + Tailwind v3 OK
+        </h1>
+    </a>
 
     <div class="p-8">
