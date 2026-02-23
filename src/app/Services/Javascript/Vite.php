@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Frontend;
+namespace App\Services\Javascript;
 
 /**
  * Vite管理

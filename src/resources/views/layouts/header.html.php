@@ -1,6 +1,6 @@
 <?php
 
-use App\Services\Frontend\Vite;
+use App\Services\Javascript\Vite;
 ?>
 <!doctype html>
 <html lang="ja">
