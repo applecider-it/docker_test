@@ -18,7 +18,7 @@ class HomeController
 
         //User::create(['name' => 'コントローラーから追加']);
 
-        $users = User::all();
+        $users = User::orderBy('id', 'desc')->get();
 
         $stmt = $pdo->query('SELECT * FROM users');
         $usersP = $stmt->fetchAll();
