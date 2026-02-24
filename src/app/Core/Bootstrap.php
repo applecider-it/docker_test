@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 use Dotenv\Dotenv;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -11,10 +13,12 @@ use Doctrine\DBAL\DriverManager;
 
 use Laminas\Db\Adapter\Adapter;
 
+use function App\Helpers\app;
+
 /**
  * ブートストラップ
  */
-class ApplicationBootstrap
+class Bootstrap
 {
     /** 実行 */
     public function exec()
@@ -30,9 +34,6 @@ class ApplicationBootstrap
     /** コアの初期化 */
     private function core()
     {
-        define('APP_ROOT', dirname(__DIR__));
-        define('APP_VIEW', APP_ROOT . '/resources/views');
-
         $dotenv = Dotenv::createImmutable(APP_ROOT);
         $dotenv->load();
     }
@@ -61,12 +62,12 @@ class ApplicationBootstrap
     private function pdo()
     {
         app()->singleton('pdo', function () {
-            return new PDO(
+            return new \PDO(
                 'mysql:host=mysql;dbname=app;charset=utf8mb4',
                 'app',
                 'secret',
                 [
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
                 ]
             );;
         });

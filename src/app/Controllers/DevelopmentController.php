@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Services\Development\DatabaseService;
 
+use function App\Helpers\render;
+
 /**
  * 開発者向けページコントローラー
  */
@@ -12,7 +14,7 @@ class DevelopmentController
     /** トップページ */
     public function index()
     {
-        (fn() => include(APP_VIEW . '/development/index.html.php'))();
+        render('development.index');
     }
 
     /** database動作確認 */
@@ -20,14 +22,12 @@ class DevelopmentController
     {
         $data = (new DatabaseService)->getTestData();
 
-        (fn($data) => include(APP_VIEW . '/development/database.html.php'))(
-            $data
-        );
+        render('development.database', $data);
     }
 
     /** javascript動作確認 */
     public function javascript()
     {
-        (fn() => include(APP_VIEW . '/development/javascript.html.php'))();
+        render('development.javascript');
     }
 }

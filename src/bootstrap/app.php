@@ -1,6 +1,7 @@
 <?php
 
-require_once __DIR__ . '/ApplicationBootstrap.php';
-require_once __DIR__ . '/helper.php';
+define('APP_ROOT', dirname(__DIR__));
 
-(new ApplicationBootstrap)->exec();
+require_once APP_ROOT . '/app/Helpers/helpers.php';
+
+(new App\Core\Bootstrap)->exec();

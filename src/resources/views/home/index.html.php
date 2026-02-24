@@ -1,7 +1,11 @@
-<?php (fn() => include(APP_VIEW . '/layouts/header.html.php'))(); ?>
+<?php
+
+use function App\Helpers\render;
+?>
+<?php render('layouts.header'); ?>
 
 <h2 class="app-h2">home.index</h2>
 
 <a href="/development/" class="app-link-normal">development</a>
 
-<?php (fn() => include(APP_VIEW . '/layouts/footer.html.php'))(); ?>
+<?php render('layouts.footer'); ?>

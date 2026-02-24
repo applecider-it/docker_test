@@ -1,8 +1,10 @@
 <?php
 
 use App\Services\Javascript\ViteService;
+use function App\Helpers\render;
 ?>
-<?php (fn() => include(APP_VIEW . '/layouts/header.html.php'))(); ?>
+
+<?php render('layouts.header'); ?>
 
 <script type="module" src="<?= ViteService::asset('resources/js/entrypoints/javascript-test.ts') ?>"></script>
 
@@ -13,4 +15,4 @@ use App\Services\Javascript\ViteService;
     <div id="vue" class="border-2"></div>
 </div>
 
-<?php (fn() => include(APP_VIEW . '/layouts/footer.html.php'))(); ?>
+<?php render('layouts.footer'); ?>

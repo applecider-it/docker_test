@@ -4,14 +4,11 @@
 $startTime = microtime(true);
 $startMemory = memory_get_usage();
 
-require_once dirname(__DIR__) . '/bootstrap.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-match(rtrim($_SERVER['REQUEST_URI'], '/')){
-    '/development' => (new App\Controllers\DevelopmentController)->index(),
-    '/development/database' => (new App\Controllers\DevelopmentController)->database(),
-    '/development/javascript' => (new App\Controllers\DevelopmentController)->javascript(),
-    default => (new App\Controllers\HomeController)->index(),
-};
+require dirname(__DIR__) . '/bootstrap/app.php';
+
+(new App\Core\Routing)->exec();
 
 // 終了時
 $endTime = microtime(true);
