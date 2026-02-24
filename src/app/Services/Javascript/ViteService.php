@@ -2,6 +2,8 @@
 
 namespace App\Services\Javascript;
 
+use function App\Helpers\env;
+
 /**
  * Vite管理
  */
@@ -60,7 +62,7 @@ class ViteService
     /** Viteが開発環境か返す */
     private static function isDev(): bool
     {
-        return $_ENV['APP_ENV'] === 'local';
+        return env('APP_ENV') === 'local';
     }
 
     /** 開発環境のURL */

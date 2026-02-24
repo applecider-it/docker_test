@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use voku\helper\HtmlMin;
 
 use function App\Helpers\app;
+use function App\Helpers\env;
 
 /**
  * ルーティング管理
@@ -22,7 +23,13 @@ class Routing
 
         $html = $response->getContent();
 
-        $htmlMin = new HtmlMin();
-        echo $htmlMin->minify($html);
+        $minity = env('APP_MINIFY');
+
+        if ($minity) {
+            $htmlMin = new HtmlMin();
+            $html =  $htmlMin->minify($html);
+        }
+
+        echo $html;
     }
 }

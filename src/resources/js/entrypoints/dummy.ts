@@ -4,6 +4,6 @@
  * どこからも呼ばれていない。
  */
 
-import '@/services/react-test/setup-react';
+import '@/services/development/react-test/setup-react';
 
 console.log("dummy");
