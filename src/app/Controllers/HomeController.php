@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use function App\Helpers\app;
+use function App\Helpers\render;
 
 /**
  * ホームコントローラー
@@ -12,6 +12,6 @@ class HomeController
     /** トップページ */
     public function index()
     {
-        return app('blade')->make('home.index')->render();
+        return render('home.index');
     }
 }

@@ -15,3 +15,9 @@ function app($abstract = null)
 
     return $abstract === null ? $container : $container->make($abstract);
 }
+
+/** View描画 */
+function render($name, array $data = [])
+{
+    return app('blade')->make($name, $data)->render();
+}
