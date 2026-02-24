@@ -12,3 +12,7 @@ $router->get('/', [HomeController::class, 'index']);
 $router->get('/development', [DevelopmentController::class, 'index']);
 $router->get('/development/database', [DevelopmentController::class, 'database']);
 $router->get('/development/javascript', [DevelopmentController::class, 'javascript']);
+
+$router->get('/hello', function () {
+    return "<p class='text-green-600'>Hello from server</p>";
+});

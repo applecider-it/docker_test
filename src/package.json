@@ -19,6 +19,7 @@
     "vue": "^3.5.26"
   },
   "dependencies": {
+    "htmx.org": "^2.0.8",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   }

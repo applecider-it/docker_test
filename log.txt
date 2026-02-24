@@ -74,3 +74,10 @@ docker compose exec php composer require laminas/laminas-db
 docker compose exec php composer require illuminate/view illuminate/filesystem illuminate/events
 
 docker compose exec php composer require illuminate/routing illuminate/http illuminate/events illuminate/container
+
+-----------------------------------
+
+
+docker compose exec node npm install htmx.org
+
+
