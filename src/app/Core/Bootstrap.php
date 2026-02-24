@@ -13,6 +13,11 @@ use Doctrine\DBAL\DriverManager;
 
 use Laminas\Db\Adapter\Adapter;
 
+use Illuminate\View\Factory;
+use Illuminate\View\FileViewFinder;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Events\Dispatcher;
+
 use function App\Helpers\app;
 
 /**
@@ -29,6 +34,8 @@ class Bootstrap
         $this->pdo();
         $this->doctrine();
         $this->laminas();
+
+        $this->blade();
     }
 
     /** コアの初期化 */
@@ -120,6 +127,33 @@ class Bootstrap
             ]);
 
             return $adapter;
+        });
+    }
+
+    /** bladeの初期化 */
+    private function blade()
+    {
+        app()->singleton('blade', function () {
+            $filesystem = new Filesystem;
+            $eventDispatcher = new Dispatcher(new Container);
+
+            $viewResolver = new Factory(
+                new \Illuminate\View\Engines\EngineResolver,
+                new FileViewFinder($filesystem, [APP_ROOT . '/resources/views']),
+                $eventDispatcher
+            );
+
+            // Bladeエンジン登録
+            $bladeCompiler = new \Illuminate\View\Compilers\BladeCompiler(
+                $filesystem,
+                APP_ROOT . '/storage/cache'
+            );
+
+            $viewResolver->getEngineResolver()->register('blade', function () use ($bladeCompiler) {
+                return new \Illuminate\View\Engines\CompilerEngine($bladeCompiler);
+            });
+
+            return $viewResolver;
         });
     }
 }

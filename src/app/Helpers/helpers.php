@@ -15,9 +15,3 @@ function app($abstract = null)
 
     return $abstract === null ? $container : $container->make($abstract);
 }
-
-/** Viewレンダラー */
-function render($name, array $data = [])
-{
-    include(APP_ROOT . '/resources/views/' . str_replace('.', '/', $name) . '.html.php');
-}

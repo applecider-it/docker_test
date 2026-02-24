@@ -10,6 +10,9 @@
     "doctrine/orm": "^3.6",
     "doctrine/dbal": "^4.4",
     "symfony/cache": "^7.4",
-    "laminas/laminas-db": "^2.20"
+    "laminas/laminas-db": "^2.20",
+    "illuminate/view": "^12.52",
+    "illuminate/filesystem": "^12.52",
+    "illuminate/events": "^12.52"
   }
 }

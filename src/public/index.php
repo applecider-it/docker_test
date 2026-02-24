@@ -26,7 +26,7 @@ $trace = [
     'メモリ使用量（MB）終了時' => $endMemory / 1024 / 1024,
     'opcache使用量（MB）'=> $opcacheStatus['memory_usage']['used_memory'] / 1024 / 1024,
     'opcache.scripts.count' => count($opcacheStatus['scripts']),
-    'opcache_get_status()' => $opcacheStatus,
+    //'opcache_get_status()' => $opcacheStatus,
 ];
 
 

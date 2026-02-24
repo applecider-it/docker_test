@@ -67,3 +67,10 @@ docker compose exec php composer require symfony/cache
 
 docker compose exec php composer require laminas/laminas-db
 
+-----------------------------------
+
+
+
+docker compose exec php composer require illuminate/view illuminate/filesystem illuminate/events
+
+
