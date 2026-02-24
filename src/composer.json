@@ -16,6 +16,7 @@
     "illuminate/events": "^12.52",
     "illuminate/routing": "^12.52",
     "illuminate/http": "^12.52",
-    "illuminate/container": "^12.52"
+    "illuminate/container": "^12.52",
+    "voku/html-min": "^4.5"
   }
 }
