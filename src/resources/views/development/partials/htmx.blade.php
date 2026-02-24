@@ -1,5 +1,5 @@
 <button 
-    hx-get="/hello"
+    hx-get="/development/javascript/htmx_api"
     hx-target="#result"
     hx-swap="innerHTML"
     class="app-btn-primary"

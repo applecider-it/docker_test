@@ -9,9 +9,9 @@ use function App\Helpers\app;
 use function App\Helpers\env;
 
 /**
- * ルーティング管理
+ * Web管理
  */
-class Routing
+class Web
 {
     /** 実行 */
     public function exec()

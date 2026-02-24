@@ -152,7 +152,7 @@ class Bootstrap
             // Bladeエンジン登録
             $bladeCompiler = new \Illuminate\View\Compilers\BladeCompiler(
                 $filesystem,
-                APP_ROOT . '/storage/cache'
+                APP_ROOT . '/storage/cache/blade'
             );
 
             $viewResolver->getEngineResolver()->register('blade', function () use ($bladeCompiler) {
