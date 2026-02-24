@@ -13,6 +13,9 @@
     "laminas/laminas-db": "^2.20",
     "illuminate/view": "^12.52",
     "illuminate/filesystem": "^12.52",
-    "illuminate/events": "^12.52"
+    "illuminate/events": "^12.52",
+    "illuminate/routing": "^12.52",
+    "illuminate/http": "^12.52",
+    "illuminate/container": "^12.52"
   }
 }

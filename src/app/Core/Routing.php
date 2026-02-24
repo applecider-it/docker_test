@@ -2,23 +2,23 @@
 
 namespace App\Core;
 
-use App\Controllers;
+use Illuminate\Http\Request;
+
+use function App\Helpers\app;
 
 /**
- * ブートストラップ
+ * ルーティング管理
  */
 class Routing
 {
     /** 実行 */
     public function exec()
     {
-        $val = match (rtrim($_SERVER['REQUEST_URI'], '/')) {
-            '/development' => (new Controllers\DevelopmentController)->index(),
-            '/development/database' => (new Controllers\DevelopmentController)->database(),
-            '/development/javascript' => (new Controllers\DevelopmentController)->javascript(),
-            default => (new Controllers\HomeController)->index(),
-        };
+        $router = app('router');
 
-        echo $val;
+        $request = Request::create($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
+        $response = $router->dispatch($request);
+
+        echo $response->getContent();
     }
 }

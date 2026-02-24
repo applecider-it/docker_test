@@ -18,6 +18,12 @@ use Illuminate\View\FileViewFinder;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Events\Dispatcher;
 
+use Illuminate\Routing\Router;
+use Illuminate\Routing\CallableDispatcher;
+use Illuminate\Routing\Contracts\CallableDispatcher as CallableDispatcherContract;
+use Illuminate\Http\Request;
+
+
 use function App\Helpers\app;
 
 /**
@@ -36,6 +42,8 @@ class Bootstrap
         $this->laminas();
 
         $this->blade();
+
+        $this->router();
     }
 
     /** コアの初期化 */
@@ -135,7 +143,7 @@ class Bootstrap
     {
         app()->singleton('blade', function () {
             $filesystem = new Filesystem;
-            $eventDispatcher = new Dispatcher(new Container);
+            $eventDispatcher = new Dispatcher(app());
 
             $viewResolver = new Factory(
                 new \Illuminate\View\Engines\EngineResolver,
@@ -154,6 +162,28 @@ class Bootstrap
             });
 
             return $viewResolver;
+        });
+    }
+
+    /** routerの初期化 */
+    private function router()
+    {
+        // routerを使うときに必要なシングルトン
+        app()->singleton(
+            CallableDispatcherContract::class,
+            function ($container) {
+                return new CallableDispatcher($container);
+            }
+        );
+
+        app()->singleton('router', function () {
+            $container = app();
+            $events = new Dispatcher($container);
+            $router = new Router($events, $container);
+
+            (fn ($router) => include(APP_ROOT . '/routes/web.php'))($router);
+
+            return $router;
         });
     }
 }
