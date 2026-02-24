@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+
+  .app-btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2;
+  }
+
   /* タイトル */
 
   .app-h2 {

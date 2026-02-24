@@ -80,6 +80,10 @@ docker compose exec php composer require illuminate/routing illuminate/http illu
 
 docker compose exec node npm install htmx.org
 
+docker compose exec node npm install alpinejs
+
+docker compose exec node npm i --save-dev @types/alpinejs
+
 -----------------------------------
 
 
