@@ -1,2 +1,1 @@
-import '@/services/react-test/setup-react';
-import '@/services/vue-test/setup-vue';
+import "@/services/development/setup-javascript-test";
