@@ -52,3 +52,9 @@ function route($name, array $params = [])
 {
     return app('url')->route($name, $params);
 }
+
+/** 設定取得 */
+function config($name)
+{
+    return app('config')->get($name);
+}

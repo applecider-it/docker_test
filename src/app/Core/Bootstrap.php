@@ -24,8 +24,10 @@ use Illuminate\Routing\Contracts\CallableDispatcher as CallableDispatcherContrac
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Http\Request;
 
+use Illuminate\Config\Repository;
+
 use function App\Helpers\app;
-use function App\Helpers\route;
+use function App\Helpers\config;
 
 /**
  * ブートストラップ
@@ -52,6 +54,10 @@ class Bootstrap
     {
         $dotenv = Dotenv::createImmutable(APP_ROOT);
         $dotenv->load();
+
+        app()->singleton('config', function () {
+            return new Repository(include(APP_ROOT . '/config/config.php'));
+        });
     }
 
     /** eloquentの初期化 */
@@ -61,10 +67,10 @@ class Bootstrap
 
         $capsule->addConnection([
             'driver' => 'mysql',
-            'host' => 'mysql',
-            'database' => 'app',
-            'username' => 'app',
-            'password' => 'secret',
+            'host' => config('database.host'),
+            'database' => config('database.database'),
+            'username' => config('database.username'),
+            'password' => config('database.password'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -79,9 +85,9 @@ class Bootstrap
     {
         app()->singleton('pdo', function () {
             return new \PDO(
-                'mysql:host=mysql;dbname=app;charset=utf8mb4',
-                'app',
-                'secret',
+                'mysql:host=' . config('database.host') . ';dbname=' . config('database.database') . ';charset=utf8mb4',
+                config('database.username'),
+                config('database.password'),
                 [
                     \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
                 ]
@@ -106,10 +112,10 @@ class Bootstrap
             // DB接続情報
             $connectionParams = [
                 'driver'   => 'pdo_mysql',
-                'host'     => 'mysql',
-                'dbname'   => 'app',
-                'user'     => 'app',
-                'password' => 'secret',
+                'host'     => config('database.host'),
+                'dbname'   => config('database.database'),
+                'user'     => config('database.username'),
+                'password' => config('database.password'),
                 'charset'  => 'utf8mb4',
             ];
 
@@ -128,10 +134,10 @@ class Bootstrap
         app()->singleton('laminas', function () {
             $adapter = new Adapter([
                 'driver'   => 'Pdo_Mysql',
-                'hostname' => 'mysql',
-                'database' => 'app',
-                'username' => 'app',
-                'password' => 'secret',
+                'hostname' => config('database.host'),
+                'database' => config('database.database'),
+                'username' => config('database.username'),
+                'password' => config('database.password'),
                 'charset'  => 'utf8mb4',
             ]);
 

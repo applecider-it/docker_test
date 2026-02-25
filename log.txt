@@ -89,4 +89,8 @@ docker compose exec node npm i --save-dev @types/alpinejs
 
 docker compose exec php composer require voku/html-min
 
+-----------------------------------
+
+docker compose exec php composer require illuminate/config
+
 
