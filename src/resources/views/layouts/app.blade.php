@@ -1,5 +1,6 @@
 @php
 use App\Services\Javascript\ViteService;
+use function App\Helpers\route;
 @endphp
 <!doctype html>
 <html lang="ja">
@@ -15,7 +16,7 @@ use App\Services\Javascript\ViteService;
 </head>
 
 <body>
-    <a href="/">
+    <a href="{{ route('home') }}">
         <h1 class="text-3xl font-bold text-gray-100 p-4 bg-slate-400">
             Vite + Tailwind v3 OK
         </h1>

@@ -21,8 +21,11 @@ use Illuminate\Events\Dispatcher;
 use Illuminate\Routing\Router;
 use Illuminate\Routing\CallableDispatcher;
 use Illuminate\Routing\Contracts\CallableDispatcher as CallableDispatcherContract;
+use Illuminate\Routing\UrlGenerator;
+use Illuminate\Http\Request;
 
 use function App\Helpers\app;
+use function App\Helpers\route;
 
 /**
  * ブートストラップ
@@ -34,14 +37,14 @@ class Bootstrap
     {
         $this->core();
 
+        $this->router();
+
         $this->eloquent();
         $this->pdo();
         $this->doctrine();
         $this->laminas();
 
         $this->blade();
-
-        $this->router();
     }
 
     /** コアの初期化 */
@@ -179,9 +182,27 @@ class Bootstrap
             $events = new Dispatcher($container);
             $router = new Router($events, $container);
 
-            (fn ($router) => include(APP_ROOT . '/routes/web.php'))($router);
+            (fn($router) => include(APP_ROOT . '/routes/web.php'))($router);
+
+            $routes = $router->getRoutes();
+
+            // UrlGeneratorを使うために必要な処理
+            $routes->refreshNameLookups();
 
             return $router;
+        });
+
+        app()->singleton('url', function () {
+            $router = app('router');
+            $routes = $router->getRoutes();
+
+            $baseUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+
+            $request = Request::create($baseUrl);
+
+            $url = new UrlGenerator($routes, $request);
+
+            return $url;
         });
     }
 }

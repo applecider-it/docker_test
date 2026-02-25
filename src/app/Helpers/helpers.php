@@ -46,3 +46,9 @@ function env(string $key, mixed $defaultValue = null)
 
     return $result;
 }
+
+/** routeからURL生成 */
+function route($name, array $params = [])
+{
+    return app('url')->route($name, $params);
+}
