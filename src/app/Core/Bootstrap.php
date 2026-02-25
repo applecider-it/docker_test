@@ -46,7 +46,7 @@ class Bootstrap
         $this->doctrine();
         $this->laminas();
 
-        $this->blade();
+        $this->view();
     }
 
     /** コアの初期化 */
@@ -145,10 +145,10 @@ class Bootstrap
         });
     }
 
-    /** bladeの初期化 */
-    private function blade()
+    /** viewの初期化 */
+    private function view()
     {
-        app()->singleton('blade', function () {
+        app()->singleton('view', function () {
             $filesystem = new Filesystem;
             $eventDispatcher = new Dispatcher(app());
 

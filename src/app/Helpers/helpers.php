@@ -25,7 +25,7 @@ function app($abstract = null)
 /** View描画 */
 function render($name, array $data = [])
 {
-    return app('blade')->make($name, $data)->render();
+    return app('view')->make($name, $data)->render();
 }
 
 /** 環境変数 */
