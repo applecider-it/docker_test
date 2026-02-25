@@ -148,9 +148,9 @@ class Bootstrap
     /** viewの初期化 */
     private function view()
     {
-        app()->singleton('view', function () {
+        app()->singleton('view', function ($container) {
             $filesystem = new Filesystem;
-            $eventDispatcher = new Dispatcher(app());
+            $eventDispatcher = new Dispatcher($container);
 
             $viewResolver = new Factory(
                 new \Illuminate\View\Engines\EngineResolver,
@@ -183,8 +183,7 @@ class Bootstrap
             }
         );
 
-        app()->singleton('router', function () {
-            $container = app();
+        app()->singleton('router', function ($container) {
             $events = new Dispatcher($container);
             $router = new Router($events, $container);
 
