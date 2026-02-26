@@ -9,4 +9,4 @@ require dirname(__DIR__) . '/bootstrap/app.php';
 
 (new App\Core\Web)->exec();
 
-$benchmarkService->closeBenchmark();
+//$benchmarkService->closeBenchmark();
