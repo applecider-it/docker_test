@@ -5,7 +5,7 @@ namespace App\Services\Development;
 /**
  * ベンチマーク
  */
-class Benchmark
+class BenchmarkService
 {
     private array $benchmarkData;
 
