@@ -24,6 +24,9 @@ $sectionClass = 'border-2 p-2';
 
     <h3 class="app-h3">alpine</h3>
     <div class="{{ $sectionClass }}">@include('development.partials.alpine')</div>
+
+    <h3 class="app-h3">turbo</h3>
+    <div class="{{ $sectionClass }}">@include('development.partials.turbo')</div>
 </div>
 
 @endsection

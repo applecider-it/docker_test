@@ -1,14 +1,7 @@
-import htmx from "htmx.org";
-import Alpine from "alpinejs";
 import "@hotwired/turbo";
-
-window.Alpine = Alpine;
-Alpine.start();
+import "./bootstrap/htmx";
+import "./bootstrap/alpinejs";
 
 const text: string = "TS test";
 
 console.log(text);
-
-document.addEventListener("turbo:load", () => {
-  htmx.process(document.body)
-})
