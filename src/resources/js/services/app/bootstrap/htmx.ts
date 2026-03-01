@@ -5,6 +5,7 @@ console.log("init htmx");
 let init: boolean = false;
 
 document.addEventListener("turbo:load", () => {
+  // ２回バインドしないように、読み込み直後だけ止める
   if (!init) {
     init = true;
     return;

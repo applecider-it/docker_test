@@ -6,7 +6,7 @@ import AppVue from "./vue/AppVue.vue";
 
 import { setupTurboLoad } from "@/services/app/turbo";
 
-const flagId = "app-flag-javascript-test-page";
+const flagId = "app-page-development-javascript-test";
 
 const setup = () => {
   console.log("init");

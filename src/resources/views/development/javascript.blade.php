@@ -10,7 +10,7 @@ $sectionClass = 'border-2 p-2';
 
 <h2 class="app-h2">development.javascript</h2>
 
-<div id="app-flag-javascript-test-page" class="hidden">false</div>
+<div id="app-page-development-javascript-test"></div>
 
 <div class="space-y-2">
     <h3 class="app-h3">react</h3>

@@ -14,12 +14,12 @@ export function setupTurboLoad(setup: Function, flagId: string) {
     // フラグ用オブジェクトがないとき（対象のページじゃないとき）
     if (!flagObj) return;
 
-    const initPage = flagObj.innerText;
+    const isInit = "initialized" in flagObj.dataset;
 
-    flagObj.innerText = "true";
+    flagObj.dataset.initialized = "on";
 
     // フラグ用オブジェクトの中身が更新済み（既に初期化されているとき）
-    if (initPage === "true") return;
+    if (isInit) return;
 
     setup();
   };
