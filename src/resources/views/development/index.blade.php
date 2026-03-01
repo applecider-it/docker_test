@@ -8,5 +8,6 @@ use function App\Helpers\route;
 
 <p><a href="{{ route('development.database') }}" class="app-link-normal">database</a></p>
 <p><a href="{{ route('development.javascript') }}" class="app-link-normal">javascript</a></p>
+<p><a href="{{ route('development.javascript2') }}" class="app-link-normal">javascript2</a></p>
 
 @endsection
