@@ -1,7 +1,7 @@
 @php
 use App\Services\Javascript\ViteService;
 
-$sectionClass = 'border-2 p-2';
+$sectionClass = 'border-2 p-2 border-red-500';
 @endphp
 @extends('layouts.app')
 @section('content')
