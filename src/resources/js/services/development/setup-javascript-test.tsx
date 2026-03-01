@@ -4,10 +4,16 @@ import ReactDOM from "react-dom/client";
 import AppReact from "./react/AppReact";
 import AppVue from "./vue/AppVue.vue";
 
-document.addEventListener("turbo:load", () => {
-  if (location.pathname !== "/development/javascript") return
+import { setupTurboLoad } from "@/services/app/turbo";
+
+const flagId = "app-flag-javascript-test-page";
+
+const setup = () => {
+  console.log("init");
 
   createApp(AppVue).mount("#vue");
 
   ReactDOM.createRoot(document.getElementById("react")).render(<AppReact />);
-});
+};
+
+setupTurboLoad(setup, flagId);
