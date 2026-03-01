@@ -93,4 +93,8 @@ docker compose exec php composer require voku/html-min
 
 docker compose exec php composer require illuminate/config
 
+-----------------------------------
 
+docker compose exec node npm install @hotwired/turbo
+
+docker compose exec node npm i --save-dev @types/hotwired__turbo
