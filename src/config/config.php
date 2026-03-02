@@ -7,4 +7,7 @@ return [
         'username' => 'app',
         'password' => 'secret',
     ],
+    'vite' => [
+        'port' => '4173',
+    ],
 ];

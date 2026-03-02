@@ -3,6 +3,7 @@
 namespace App\Services\Javascript;
 
 use function App\Helpers\env;
+use function App\Helpers\config;
 
 /**
  * Vite管理
@@ -68,6 +69,6 @@ class ViteService
     /** 開発環境のURL */
     private static function devUrl(): string
     {
-        return 'http://localhost:4173';
+        return 'http://localhost:' . config('vite.port');
     }
 }
