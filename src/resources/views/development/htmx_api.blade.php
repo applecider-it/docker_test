@@ -1,0 +1,1 @@
+<p class="text-green-600">Hello from server</p>

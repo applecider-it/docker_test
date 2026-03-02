@@ -2,7 +2,7 @@
 use function App\Helpers\route;
 @endphp
 <button 
-    hx-get="{{ route('development.javascript.htmx_api') }}"
+    hx-get="{{ route('development.htmx_api') }}"
     hx-target="#result"
     hx-swap="innerHTML"
     class="app-btn-primary"
