@@ -30,10 +30,4 @@ class DevelopmentController
     {
         return render('development.javascript');
     }
-
-    /** javascript動作確認2 */
-    public function javascript2()
-    {
-        return render('development.javascript2');
-    }
 }

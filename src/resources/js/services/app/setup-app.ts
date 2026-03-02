@@ -1,4 +1,3 @@
-import "@hotwired/turbo";
 import "./bootstrap/htmx";
 import "./bootstrap/alpinejs";
 

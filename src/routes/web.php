@@ -14,18 +14,7 @@ $router->get('/', [HomeController::class, 'index'])->name('home');
 $router->get('/development', [DevelopmentController::class, 'index'])->name('development.index');
 $router->get('/development/database', [DevelopmentController::class, 'database'])->name('development.database');
 $router->get('/development/javascript', [DevelopmentController::class, 'javascript'])->name('development.javascript');
-$router->get('/development/javascript2', [DevelopmentController::class, 'javascript2'])->name('development.javascript2');
 // htmx動作確認用API
 $router->get('/development/javascript/htmx_api', function () {
     return "<p class='text-green-600'>Hello from server</p>";
 })->name('development.javascript.htmx_api');
-// turbo動作確認用API
-$router->get('/development/javascript/turbo_api', function () {
-    return '
-        <turbo-frame id="user_list">
-            <ul>
-                <li>User A</li>
-                <li>User B</li>
-            </ul>
-        </turbo-frame>';
-})->name('development.javascript.turbo_api');
