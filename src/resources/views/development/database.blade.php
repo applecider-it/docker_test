@@ -10,27 +10,6 @@
             <div>{{ $user->id }} - {{ $user->name }}</div>
         @endforeach
     </div>
-
-    <h3 class="app-h3">Pdo</h3>
-    <div>
-        @foreach ($usersP as $user)
-            <div>{{ $user['id'] }} - {{ $user['name'] }}</div>
-        @endforeach
-    </div>
-
-    <h3 class="app-h3">Doctrine</h3>
-    <div>
-        @foreach ($usersD as $user)
-            <div>{{ $user->getId() }} - {{ $user->getName() }}</div>
-        @endforeach
-    </div>
-
-    <h3 class="app-h3">Laminas</h3>
-    <div>
-        @foreach ($usersL as $user)
-            <div>{{ $user['id'] }} - {{ $user['name'] }}</div>
-        @endforeach
-    </div>
 </div>
 
 @endsection

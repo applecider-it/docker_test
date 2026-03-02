@@ -106,3 +106,11 @@ docker compose exec node npm uninstall --save-dev @types/hotwired__turbo
 
 
 -----------------------------------
+
+docker compose exec php composer remove doctrine/orm
+docker compose exec php composer remove doctrine/dbal
+
+docker compose exec php composer remove symfony/cache
+
+docker compose exec php composer remove laminas/laminas-db
+
