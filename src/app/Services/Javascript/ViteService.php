@@ -68,6 +68,6 @@ class ViteService
     /** 開発環境のURL */
     private static function devUrl(): string
     {
-        return 'http://localhost:5173';
+        return 'http://localhost:4173';
     }
 }
