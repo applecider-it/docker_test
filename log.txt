@@ -114,3 +114,7 @@ docker compose exec php composer remove symfony/cache
 
 docker compose exec php composer remove laminas/laminas-db
 
+-----------------------------------
+
+
+docker compose exec php composer remove voku/html-min

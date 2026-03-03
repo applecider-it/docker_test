@@ -3,7 +3,6 @@
 namespace App\Core;
 
 use Illuminate\Http\Request;
-use voku\helper\HtmlMin;
 
 use function App\Helpers\app;
 use function App\Helpers\env;
@@ -22,13 +21,6 @@ class Web
         $response = $router->dispatch($request);
 
         $html = $response->getContent();
-
-        $minity = env('APP_MINIFY');
-
-        if ($minity) {
-            $htmlMin = new HtmlMin();
-            $html =  $htmlMin->minify($html);
-        }
 
         echo $html;
     }
