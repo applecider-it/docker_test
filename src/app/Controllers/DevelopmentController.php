@@ -30,10 +30,4 @@ class DevelopmentController
     {
         return render('development.javascript');
     }
-
-    /** htmx API */
-    public function htmx_api()
-    {
-        return render('development.htmx_api');
-    }
 }

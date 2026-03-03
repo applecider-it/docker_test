@@ -118,3 +118,8 @@ docker compose exec php composer remove laminas/laminas-db
 
 
 docker compose exec php composer remove voku/html-min
+
+-----------------------------------
+
+
+docker compose exec node npm uninstall htmx.org
