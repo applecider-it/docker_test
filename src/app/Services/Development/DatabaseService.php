@@ -2,12 +2,7 @@
 
 namespace App\Services\Development;
 
-use Laminas\Db\Sql\Sql;
-
 use App\Models\User;
-use App\Doctrine\User as UserD;
-
-use function App\Helpers\app;
 
 /**
  * 開発者向けページのDatabase管理
