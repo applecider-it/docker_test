@@ -34,4 +34,10 @@ class UserEntity
     {
         return $this->name;
     }
+
+    /** 動作確認用 */
+    public function textFunc(): void
+    {
+        $this->name->textFunc();
+    }
 }

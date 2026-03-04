@@ -24,7 +24,7 @@ class TestUseCase
     {
         $userEntity = $this->userRepository->getUser($idVO);
 
-        $userEntity->name()->textFunc();
+        $userEntity->textFunc();
 
         $this->userRepository->updateUser($userEntity);
 
