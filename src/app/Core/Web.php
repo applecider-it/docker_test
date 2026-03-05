@@ -5,7 +5,6 @@ namespace App\Core;
 use Illuminate\Http\Request;
 
 use function App\Helpers\app;
-use function App\Helpers\env;
 
 /**
  * Web管理

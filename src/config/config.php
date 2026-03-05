@@ -1,5 +1,9 @@
 <?php
 
+use function App\Helpers\env;
+
+$env = env('APP_ENV');
+
 return [
     'database' => [
         'host' => 'mysql',
@@ -9,5 +13,6 @@ return [
     ],
     'vite' => [
         'port' => '4173',
+        'dev' => $env === 'local',
     ],
 ];
