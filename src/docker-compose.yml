@@ -41,7 +41,7 @@ services:
   mysql:
     image: mysql:8.0
     ports:
-      - "3306:3306" # ← ホストからも触りたい場合
+      - "4306:3306" # ← ホストからも触りたい場合
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: app
