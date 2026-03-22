@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const val1 = ref(1);
+const val1 = ref<number>(1);
 
 const list = ["A", "B", "C"];
 

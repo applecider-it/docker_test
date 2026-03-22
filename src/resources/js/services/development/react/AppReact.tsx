@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function AppReact() {
-  const [val1, setVal1] = useState(1);
+  const [val1, setVal1] = useState<number>(1);
 
   const initailVal2 = 1;
-  const [val2, setVal2] = useState(initailVal2);
-  const refVal2 = useRef(initailVal2);
+  const [val2, setVal2] = useState<number>(initailVal2);
+  const refVal2 = useRef<number>(initailVal2);
 
   const list = ["A", "B", "C"];
 
