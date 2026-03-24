@@ -1,6 +1,6 @@
 
 
-cd /home/owner/workspace/tmp/docker_test/src
+cd ~/workspace/github/docker-test/src
 
 -----------------------------------
 
