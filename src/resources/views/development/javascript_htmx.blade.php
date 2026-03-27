@@ -1,4 +1,4 @@
-<div class="space-y-5 border-2 p-2">
+<div class="space-y-5 border-2 p-2 app-animate-fade-in">
     <div>結果</div>
 
     <div>
