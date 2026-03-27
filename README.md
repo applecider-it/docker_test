@@ -1,6 +1,8 @@
 # Docker動作確認
 
-wsl + Dockerの動作確認用
+wsl + Docker + Viteの動作確認用
+
+Macでも動作確認済み
 
 ## 設計
 
