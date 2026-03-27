@@ -8,9 +8,9 @@
     onsubmit="return false;"
     class="space-x-5"
   >
-    <input name="keyword" placeholder="検索">
+    <input name="keyword" placeholder="検索" class="app-form-input w-auto">
 
-    <select name="category">
+    <select name="category" class="app-form-input w-auto">>
       <option value="">すべて</option>
       @foreach($categoryHash as $key => $val)
         <option value="{{ $key }}" @if($key === $category) selected @endif>{{ $val }}</option>

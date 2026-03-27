@@ -4,9 +4,11 @@
 
 @layer components {
   /* ボタン */
-
+  .app-btn {
+    @apply px-4 py-2 rounded-lg shadow hover:scale-105 transition;
+  }
   .app-btn-primary {
-    @apply bg-blue-500 text-white px-4 py-2;
+    @apply app-btn bg-blue-500 text-white;
   }
 
   /* タイトル */
@@ -22,6 +24,11 @@
   /* 通常のリンク */
   .app-link-normal {
     @apply text-blue-600 hover:underline;
+  }
+
+  /* テキストボックス */
+  .app-form-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition;
   }
 
   /* フェードインアニメーション */
