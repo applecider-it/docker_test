@@ -29,6 +29,22 @@ class DevelopmentController
     /** javascript動作確認 */
     public function javascript()
     {
-        return render('development.javascript');
+        $categoryHash = [
+            'tech' => 'Tech',
+            'book' => 'Book',
+        ];
+        $category = 'tech';
+        return render('development.javascript', compact('categoryHash', 'category'));
+    }
+
+    /** javascript動作確認 htmx API */
+    public function javascript_htmx()
+    {
+        $all = $_GET;
+
+        return render('development.javascript_htmx', [
+            'date' => date('Y-m-d H:i:s'),
+            'all' => $all,
+        ]);
     }
 }

@@ -14,3 +14,4 @@ $router->get('/', [HomeController::class, 'index'])->name('home');
 $router->get('/development', [DevelopmentController::class, 'index'])->name('development.index');
 $router->get('/development/database', [DevelopmentController::class, 'database'])->name('development.database');
 $router->get('/development/javascript', [DevelopmentController::class, 'javascript'])->name('development.javascript');
+$router->get('/development/javascript_htmx', [DevelopmentController::class, 'javascript_htmx'])->name('development.javascript_htmx');

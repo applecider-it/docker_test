@@ -1,7 +1,7 @@
 @php
 use App\Services\Javascript\ViteService;
 
-$sectionClass = 'border-2 p-2';
+$sectionClass = 'border-4 p-5';
 @endphp
 @extends('layouts.app')
 @section('content')
@@ -12,7 +12,7 @@ $sectionClass = 'border-2 p-2';
 
 <div id="app-page-development-javascript-test"></div>
 
-<div class="space-y-2">
+<div class="space-y-5">
     <h3 class="app-h3">alpine</h3>
     <div class="{{ $sectionClass }}">@include('development.partials.alpine')</div>
 
@@ -21,6 +21,9 @@ $sectionClass = 'border-2 p-2';
 
     <h3 class="app-h3">react</h3>
     <div id="react" class="{{ $sectionClass }}"></div>
+
+    <h3 class="app-h3">htmx</h3>
+    <div class="{{ $sectionClass }}">@include('development.partials.htmx')</div>
 </div>
 
 @endsection

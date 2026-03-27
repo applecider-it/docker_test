@@ -22,7 +22,7 @@ use function App\Helpers\route;
         </h1>
     </a>
 
-    <div class="container mx-auto p-8">
+    <div class="container mx-auto p-8 pb-40">
         @yield('content')
     </div>
 </body>
