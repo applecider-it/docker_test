@@ -23,6 +23,16 @@ docker compose up --build
 
 -----------------------------------
 
+セットアップ
+
+cp .env.example .env
+
+
+他は、下記手順
+
+
+-----------------------------------
+
 変更を同期する
 
 docker compose exec php composer install
