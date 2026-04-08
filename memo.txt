@@ -90,4 +90,15 @@ SQL
 
 -----------------------------------
 
+ブロックチェーン
+
+
+仮想ブロックチェーン起動
+
+docker compose exec node npx hardhat node
+
+動作確認
+
+docker compose exec node npx hardhat run scripts/deploy.js --network localhost
+
 
