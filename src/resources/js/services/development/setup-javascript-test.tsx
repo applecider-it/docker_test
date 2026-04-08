@@ -6,4 +6,4 @@ import AppVue from "./vue/AppVue.vue";
 
 createApp(AppVue).mount("#vue");
 
-ReactDOM.createRoot(document.getElementById("react")).render(<AppReact />);
+ReactDOM.createRoot(document.getElementById("react")!).render(<AppReact />);

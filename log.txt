@@ -123,3 +123,16 @@ docker compose exec php composer remove voku/html-min
 
 
 docker compose exec node npm uninstall htmx.org
+
+-----------------------------------
+
+docker compose exec node npm install --save-dev hardhat@^2.22.0
+
+docker compose exec node npx hardhat init --force
+
+docker compose exec node npx hardhat compile
+
+docker compose exec node npx hardhat node
+
+docker compose exec node npx hardhat run scripts/deploy.js --network localhost
+
