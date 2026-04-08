@@ -47,4 +47,10 @@ class DevelopmentController
             'all' => $all,
         ]);
     }
+
+    /** atomic動作確認 */
+    public function atomic()
+    {
+        return render('development.atomic');
+    }
 }

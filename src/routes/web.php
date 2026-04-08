@@ -15,3 +15,4 @@ $router->get('/development', [DevelopmentController::class, 'index'])->name('dev
 $router->get('/development/database', [DevelopmentController::class, 'database'])->name('development.database');
 $router->get('/development/javascript', [DevelopmentController::class, 'javascript'])->name('development.javascript');
 $router->get('/development/javascript_htmx', [DevelopmentController::class, 'javascript_htmx'])->name('development.javascript_htmx');
+$router->get('/development/atomic', [DevelopmentController::class, 'atomic'])->name('development.atomic');

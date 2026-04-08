@@ -10,8 +10,6 @@ $sectionClass = 'border-4 p-5';
 
 <h2 class="app-h2">development.javascript</h2>
 
-<div id="app-page-development-javascript-test"></div>
-
 <div class="space-y-5">
     <h3 class="app-h3">alpine</h3>
     <div class="{{ $sectionClass }}">@include('development.partials.alpine')</div>
