@@ -1,18 +1,36 @@
 /** メインルーチン */
 async function main() {
-  const deployers = await ethers.getSigners();
+  const users = await ethers.getSigners();
+  const line = "----------------------------------------------------------------";
 
-  const contractAddress = await deploy();
+  console.log("users.length", users.length);
+  let cnt = 0;
+  for (const user of users) {
+    console.log("user.address", user.address);
+    cnt++;
+    if (cnt >= 4) break;
+  }
+
+  console.log(line)
+
+  const contractAddress = await deploy(users[3]);
+
+  console.log(line)
 
   const contract = await ethers.getContractAt("MyNFT", contractAddress);
 
-  await mintTest(contract, deployers[0], "https://example.com/metadata/0.json");
-  await mintTest(contract, deployers[1], "https://example.com/metadata/1.json");
+  await mintTest(contract, users[1], "https://example.com/metadata/0.json");
+
+  console.log(line)
+
+  await mintTest(contract, users[2], "https://example.com/metadata/1.json");
 }
 
 /** NFTをデプロイ */
-const deploy = async () => {
-  const Factory = await ethers.getContractFactory("MyNFT");
+const deploy = async (user) => {
+  console.log("## deploy ##");
+
+  const Factory = await ethers.getContractFactory("MyNFT", user);
 
   const contract = await Factory.deploy();
 
@@ -22,15 +40,20 @@ const deploy = async () => {
 
   console.log("NFT deployed to:", address);
 
+  const owner = await contract.owner();
+  console.log("Contract Owner:", owner);
+
   return address;
 };
 
 /** トークン発行と検証 */
-const mintTest = async (contract, deployer, argUri) => {
-  console.log("deployer.address:", deployer.address);
+const mintTest = async (contract, user, argUri) => {
+  console.log("## mintTest ##");
+
+  console.log("user.address:", user.address);
 
   // NFT発行
-  const tx = await contract.mint(deployer.address, argUri);
+  const tx = await contract.mint(user.address, argUri);
 
   const receipt = await tx.wait();
 
