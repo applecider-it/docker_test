@@ -17,13 +17,11 @@ async function main() {
 
   console.log(line)
 
-  const contract = await ethers.getContractAt("MyNFT", contractAddress);
-
-  await mintTest(contract, users[1], "https://example.com/metadata/0.json");
+  await mintTest(contractAddress, users[1], "https://example.com/metadata/0.json");
 
   console.log(line)
 
-  await mintTest(contract, users[2], "https://example.com/metadata/1.json");
+  await mintTest(contractAddress, users[2], "https://example.com/metadata/1.json");
 }
 
 /** NFTをデプロイ */
@@ -47,8 +45,10 @@ const deploy = async (user) => {
 };
 
 /** トークン発行と検証 */
-const mintTest = async (contract, user, argUri) => {
+const mintTest = async (contractAddress, user, argUri) => {
   console.log("## mintTest ##");
+
+  const contract = (await ethers.getContractAt("MyNFT", contractAddress)).connect(user);
 
   console.log("user.address:", user.address);
 
@@ -79,6 +79,9 @@ const mintTest = async (contract, user, argUri) => {
   // 内容確認
   const uri = await contract.tokenURI(tokenId);
   console.log("Metadata URI:", uri);
+
+  // 実行者確認
+  console.log("Signer:", await contract.runner.address);
 };
 
 main().catch((error) => {
