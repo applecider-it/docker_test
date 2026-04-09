@@ -81,7 +81,7 @@ const mintTest = async (contractAddress, user, argUri) => {
   console.log("Metadata URI:", uri);
 
   // 実行者確認
-  console.log("Signer:", await contract.runner.address);
+  console.log("Signer:", contract.runner.address);
 };
 
 main().catch((error) => {
