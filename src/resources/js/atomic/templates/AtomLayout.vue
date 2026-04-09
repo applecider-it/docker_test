@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col border-8">
     <header class="p-4 border-b">
       <h1 class="text-lg font-semibold">アトミックデザイン用レイアウト</h1>
     </header>

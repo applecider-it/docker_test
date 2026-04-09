@@ -1,5 +1,7 @@
 import { createApp } from "vue";
 
-import AtomSample from "@/atomic/pages/AtomSample.vue";
+import AtomicSamplePage from "@/atomic/pages/AtomicSamplePage.vue";
 
-createApp(AtomSample).mount("#vue");
+const list = ["カード１", "カード２", "カード３"];
+
+createApp(AtomicSamplePage, { list }).mount("#vue");
