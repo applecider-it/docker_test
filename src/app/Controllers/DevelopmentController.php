@@ -53,4 +53,16 @@ class DevelopmentController
     {
         return render('development.atomic');
     }
+
+    /** turbo動作確認 */
+    public function turbo()
+    {
+        return render('development.turbo');
+    }
+
+    /** turbo動作確認2 */
+    public function turbo2()
+    {
+        return render('development.turbo2');
+    }
 }

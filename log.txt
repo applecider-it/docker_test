@@ -137,3 +137,10 @@ docker compose exec node npx hardhat node
 docker compose exec node npx hardhat run scripts/deploy.js --network localhost
 
 docker compose exec node npm install @openzeppelin/contracts@4.9.6
+
+-----------------------------------
+
+
+
+docker compose exec node npm install @hotwired/turbo
+
