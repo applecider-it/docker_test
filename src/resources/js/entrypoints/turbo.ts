@@ -1,1 +1,1 @@
-import "@hotwired/turbo";
+import "@/services/app/setup-turbo";

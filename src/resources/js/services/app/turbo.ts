@@ -1,8 +1,11 @@
+/** コールバック */
+type Callback = (el: HTMLElement) => void;
+
 /** ページ設定 */
 type Page = {
   id: string;
-  mounted: Function;
-  unmounted: Function;
+  mounted: Callback;
+  unmounted: Callback;
 };
 
 /** ページ設定一覧 */
@@ -11,6 +14,12 @@ const pageList: Page[] = [];
 /** 初期ロードフラグ */
 let isInit = false;
 
+// 読み込み時呼ばれるイベント
+//
+// 画面を開いた時は、JS読み込み -> turbo:load
+// 画面遷移後は、turbo:load -> JS読み込み
+//
+// 順番が変わるので、isInitを使った調整が必要
 document.addEventListener("turbo:load", () => {
   pageList.forEach((row: Page) => {
     const el = document.getElementById(row.id);
@@ -23,6 +32,7 @@ document.addEventListener("turbo:load", () => {
   isInit = true;
 });
 
+// ページ遷移前に呼ばれるイベント
 document.addEventListener("turbo:before-cache", () => {
   pageList.forEach((row: Page) => {
     const el = document.getElementById(row.id);
@@ -34,10 +44,10 @@ document.addEventListener("turbo:before-cache", () => {
 });
 
 /** ターボ用のセットアップ */
-export const turboSetup = (
+export const setupTurboContainer = (
   id: string,
-  mounted: Function,
-  unmounted: Function
+  mounted: Callback,
+  unmounted: Callback
 ) => {
   pageList.push({
     id,
@@ -45,5 +55,8 @@ export const turboSetup = (
     unmounted,
   });
 
-  if (isInit) mounted(document.getElementById(id));
+  if (isInit) {
+    const el = document.getElementById(id);
+    if (el) mounted(el);
+  }
 };

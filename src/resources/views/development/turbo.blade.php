@@ -2,7 +2,7 @@
 use function App\Helpers\route;
 use App\Services\Javascript\ViteService;
 @endphp
-@extends('development.layouts.turbo')
+@extends('layouts.turbo')
 @section('content')
 
 <script type="module" src="{{ ViteService::asset('resources/js/entrypoints/development/turbo-test.ts') }}"></script>

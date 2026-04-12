@@ -1,23 +1,23 @@
-import { turboSetup } from "./turbo/turbo-common";
+import { setupTurboContainer } from "@/services/app/turbo";
 
 console.log("setup turbo");
 
 const clickTest = () => {
-  console.log('click');
-}
-
-const mounted = (el: HTMLElement) => {
-  console.log('turbo mounted')
-
-  el.innerText = "テスト";
-
-  window.addEventListener('click', clickTest)
+  console.log("click");
 };
 
-const unmounted = (el: HTMLElement) => {
-  console.log('turbo unmounted')
+setupTurboContainer(
+  "app-page-container-turbo",
+  (el) => {
+    console.log("turbo mounted");
 
-  window.removeEventListener('click', clickTest)
-};
+    el.innerText = "テスト";
 
-turboSetup('app-page-container-turbo', mounted, unmounted);
+    window.addEventListener("click", clickTest);
+  },
+  (el) => {
+    console.log("turbo unmounted");
+
+    window.removeEventListener("click", clickTest);
+  }
+);
