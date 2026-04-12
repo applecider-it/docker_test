@@ -6,7 +6,7 @@ $sectionClass = 'border-4 p-5';
 @extends('layouts.app')
 @section('content')
 
-<script type="module" src="{{ ViteService::asset('resources/js/entrypoints/javascript-test.ts') }}"></script>
+<script type="module" src="{{ ViteService::asset('resources/js/entrypoints/development/javascript-test.ts') }}"></script>
 
 <h2 class="app-h2">development.javascript</h2>
 

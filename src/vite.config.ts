@@ -23,8 +23,13 @@ export default defineConfig({
     rollupOptions: {
       input: [
         "resources/js/entrypoints/app.ts",
-        "resources/js/entrypoints/javascript-test.ts",
+        "resources/js/entrypoints/turbo.ts",
         "resources/js/entrypoints/dummy.ts",
+
+        "resources/js/entrypoints/development/atomic-test.ts",
+        "resources/js/entrypoints/development/javascript-test.ts",
+        "resources/js/entrypoints/development/turbo-test.ts",
+        "resources/js/entrypoints/development/turbo-test2.ts",
 
         "resources/css/app.css",
       ],

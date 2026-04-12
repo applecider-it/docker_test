@@ -1,5 +1,3 @@
-import "@hotwired/turbo";
-
 /** ページ設定 */
 type Page = {
   id: string;

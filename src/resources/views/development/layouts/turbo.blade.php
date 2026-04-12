@@ -7,14 +7,15 @@ use function App\Helpers\route;
 
 <head>
     @include('layouts.partials.head')
+    <script type="module" src="{{ ViteService::asset('resources/js/entrypoints/turbo.ts') }}"></script>
 </head>
 
 <body>
-    <a href="{{ route('home') }}">
+    <div>
         <h1 class="text-3xl font-bold text-gray-100 p-4 bg-slate-400">
-            Vite + Tailwind v3 OK
+            Turbo Test
         </h1>
-    </a>
+    </div>
 
     <div class="container mx-auto p-8 pb-40">
         @yield('content')
