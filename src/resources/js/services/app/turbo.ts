@@ -1,3 +1,7 @@
+/**
+ * ターボ関連
+ */
+
 /** コールバック */
 type Callback = (el: HTMLElement) => void;
 
