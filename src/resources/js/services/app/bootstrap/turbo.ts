@@ -1,5 +1,5 @@
 import "@hotwired/turbo";
 
-import { setupTurbo } from "@/services/turbo/turbo";
+import { turboCtrl } from "@/services/turbo/turbo";
 
-setupTurbo();
+turboCtrl.setupTurbo();

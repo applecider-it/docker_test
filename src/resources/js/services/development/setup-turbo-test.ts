@@ -1,4 +1,4 @@
-import { setupTurboContainer } from "@/services/turbo/turbo";
+import { turboCtrl } from "@/services/turbo/turbo";
 
 console.log("setup turbo");
 
@@ -6,7 +6,7 @@ const clickTest = () => {
   console.log("click");
 };
 
-setupTurboContainer(
+turboCtrl.setupTurboContainer(
   "app-page-container-turbo",
   (el) => {
     console.log("turbo mounted");

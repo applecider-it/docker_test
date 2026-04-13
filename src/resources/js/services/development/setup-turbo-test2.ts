@@ -1,8 +1,8 @@
-import { setupTurboContainer } from "@/services/turbo/turbo";
+import { turboCtrl } from "@/services/turbo/turbo";
 
 console.log("setup turbo2");
 
-setupTurboContainer(
+turboCtrl.setupTurboContainer(
   "app-page-container-turbo2",
   (el) => {
     console.log("turbo2 mounted");
