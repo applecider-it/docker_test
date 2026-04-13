@@ -1,4 +1,4 @@
-import { setupTurboContainer } from "@/services/app/turbo";
+import { setupTurboContainer } from "@/services/turbo/turbo";
 
 console.log("setup turbo2");
 
