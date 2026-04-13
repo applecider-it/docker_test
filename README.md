@@ -39,3 +39,22 @@ reduxもグローバル変数になるためカプセル化できなくなるの
 turboの実装例もありますが、全ページ常時WebSocket接続が必要な状況で、MPAにしたいとき以外は非推奨。
 
 なぜ非推奨かは、実装例を見ればわかると思う。
+
+## 構造
+
+```
+src/
+  app/  PHPのアプリケーション部分
+  artifacts/  ブロックチェーンの自動生成される部分
+  bootstrap/  PHPブート部分
+  config/ PHP設定
+  contracts/  ブロックチェーンのコントラクト
+  database/  PHP
+  ignition/  ブロックチェーン
+  public/ PHPのWEBのエントリーポイント
+  resources/  PHPのリソース
+  routes/ PHPのルート
+  scripts/  ブロックチェーンのテストコード
+  storage/  PHPのストレージ
+  test/ ブロックチェーンのテスト
+```

@@ -92,6 +92,10 @@ SQL
 
 ブロックチェーン
 
+cd ~/workspace/github/docker-test/bc
+
+docker compose up
+
 
 仮想ブロックチェーン起動
 
