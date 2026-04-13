@@ -167,3 +167,15 @@ docker compose exec node npm uninstall \
   autoprefixer \
   postcss
 
+-----------------------------------
+
+
+
+docker compose exec node npm uninstall --save-dev hardhat@^2.22.0
+
+docker compose exec node npm uninstall @openzeppelin/contracts@4.9.6
+
+docker compose exec node npm uninstall \
+  @nomicfoundation/hardhat-toolbox \
+  hardhat \
+  @openzeppelin/contracts

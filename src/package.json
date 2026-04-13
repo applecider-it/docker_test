@@ -5,7 +5,6 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
     "@types/alpinejs": "^3.13.11",
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
@@ -13,7 +12,6 @@
     "@vitejs/plugin-react": "^5.1.2",
     "@vitejs/plugin-vue": "^6.0.3",
     "autoprefixer": "^10.4.23",
-    "hardhat": "^2.28.6",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3",
@@ -23,7 +21,6 @@
   },
   "dependencies": {
     "@hotwired/turbo": "^8.0.23",
-    "@openzeppelin/contracts": "^4.9.6",
     "alpinejs": "^3.15.8",
     "htmx.org": "^2.0.8",
     "react": "^19.2.3",
