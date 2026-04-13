@@ -25,19 +25,31 @@ docker compose up --build
 
 セットアップ
 
+
+PHP
+
+cd ~/workspace/github/docker-test/src
+
+docker compose up
+
+
 cp .env.example .env
 
-
-他は、下記手順
-
-
------------------------------------
-
-変更を同期する
 
 docker compose exec php composer install
 
 docker compose exec node npm install
+
+----
+
+ブロックチェーン
+
+cd ~/workspace/github/docker-test/bc
+
+docker compose up
+
+docker compose exec node npm install
+
 
 -----------------------------------
 

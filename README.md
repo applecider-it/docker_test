@@ -10,13 +10,43 @@ Macでも動作確認済み
 - Laravelのコンポーネントを部分的に利用。
 - Viteの動作確認。
 
-## フロントエンド動作確認
+## PHP動作確認
+
+- Mysql接続
+
+## Javascript動作確認
 
 - Viteのホットリロード
 - Alpine
 - Vue
 - React
 - HTMX
+- Turbo
+
+## ブロックチェーン動作確認
+
+- 仮想ブロックチェーンでのmint
+
+## 構造
+
+```
+bc/ ブロックチェーン
+  artifacts/  自動生成される部分
+  contracts/  コントラクト
+  ignition/
+  scripts/  テストコード
+  test/
+
+src/  PHP
+  app/  アプリケーション部分
+  bootstrap/  ブート部分
+  config/ 設定
+  database/
+  public/ WEBのエントリーポイント
+  resources/  リソース
+  routes/ ルート
+  storage/  ストレージ
+```
 
 ## その他
 
@@ -39,24 +69,3 @@ reduxもグローバル変数になるためカプセル化できなくなるの
 turboの実装例もありますが、全ページ常時WebSocket接続が必要な状況で、MPAにしたいとき以外は非推奨。
 
 なぜ非推奨かは、実装例を見ればわかると思う。
-
-## 構造
-
-```
-bc/ ブロックチェーン
-  artifacts/  自動生成される部分
-  contracts/  コントラクト
-  ignition/
-  scripts/  テストコード
-  test/
-
-src/  PHP
-  app/  アプリケーション部分
-  bootstrap/  ブート部分
-  config/ 設定
-  database/
-  public/ WEBのエントリーポイント
-  resources/  リソース
-  routes/ ルート
-  storage/  ストレージ
-```
