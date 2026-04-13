@@ -1,6 +1,4 @@
 /node_modules
-/public/assets
-/vendor
 /.env
 
 # Hardhat files

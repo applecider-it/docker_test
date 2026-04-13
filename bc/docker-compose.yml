@@ -1,14 +1,12 @@
-name: docker_wsl
+name: docker_wsl_bc
 
 services:
   node:
     image: node:22-alpine
     user: "1000:1000"
     working_dir: /app
-    ports:
-    - "4173:4173"
     volumes:
       - ./:/app
     command: sh -c "npm install && npm run dev"
     tty: true
-    container_name: node
+    container_name: bc_node
