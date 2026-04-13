@@ -43,18 +43,20 @@ turboの実装例もありますが、全ページ常時WebSocket接続が必要
 ## 構造
 
 ```
-src/
-  app/  PHPのアプリケーション部分
-  artifacts/  ブロックチェーンの自動生成される部分
-  bootstrap/  PHPブート部分
-  config/ PHP設定
-  contracts/  ブロックチェーンのコントラクト
-  database/  PHP
-  ignition/  ブロックチェーン
-  public/ PHPのWEBのエントリーポイント
-  resources/  PHPのリソース
-  routes/ PHPのルート
-  scripts/  ブロックチェーンのテストコード
-  storage/  PHPのストレージ
-  test/ ブロックチェーンのテスト
+bc/ ブロックチェーン
+  artifacts/  自動生成される部分
+  contracts/  コントラクト
+  ignition/
+  scripts/  テストコード
+  test/
+
+src/  PHP
+  app/  アプリケーション部分
+  bootstrap/  ブート部分
+  config/ 設定
+  database/
+  public/ WEBのエントリーポイント
+  resources/  リソース
+  routes/ ルート
+  storage/  ストレージ
 ```
