@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "tail -f /dev/null"
+    "dev": "npx hardhat node"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^6.1.2",
