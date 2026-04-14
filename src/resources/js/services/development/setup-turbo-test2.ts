@@ -3,7 +3,7 @@ import { turboCtrl } from "@/services/turbo/turbo";
 console.log("setup turbo2");
 
 turboCtrl.setupTurboContainer(
-  "app-page-container-turbo2",
+  "app-page-container-development-turbo2",
   (el) => {
     console.log("turbo2 mounted");
 
@@ -11,5 +11,5 @@ turboCtrl.setupTurboContainer(
   },
   (el) => {
     console.log("turbo2 unmounted");
-  }
+  },
 );

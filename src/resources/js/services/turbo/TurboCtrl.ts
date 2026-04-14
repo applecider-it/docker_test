@@ -52,6 +52,11 @@ export default class TurboCtrl {
 
   /** ターボコンテナ用のセットアップ */
   setupTurboContainer(id: string, mounted: Callback, unmounted: Callback) {
+    this.pageList.forEach((row) => {
+      if (row.id === id)
+        throw new Error(`ターボコンテナIDが重複しています。id: ${id}`);
+    });
+
     this.pageList.push({
       id,
       mounted,

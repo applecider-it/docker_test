@@ -10,8 +10,7 @@ use App\Services\Javascript\ViteService;
 <h2 class="app-h2">development.turbo2</h2>
 
 <div class="space-y-5">
-    <div id="app-page-container-turbo2"></div>
-    <p><a href="{{ route('development.turbo') }}" class="app-link-normal">turbo</a></p>
+    <div id="app-page-container-development-turbo2"></div>
 </div>
 
 @endsection

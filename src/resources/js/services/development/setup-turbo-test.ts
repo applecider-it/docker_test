@@ -7,7 +7,7 @@ const clickTest = () => {
 };
 
 turboCtrl.setupTurboContainer(
-  "app-page-container-turbo",
+  "app-page-container-development-turbo",
   (el) => {
     console.log("turbo mounted");
 
@@ -19,5 +19,5 @@ turboCtrl.setupTurboContainer(
     console.log("turbo unmounted");
 
     window.removeEventListener("click", clickTest);
-  }
+  },
 );
