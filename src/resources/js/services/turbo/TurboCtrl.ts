@@ -4,8 +4,8 @@ type Callback = (el: HTMLElement) => void;
 /** ページ設定 */
 type Page = {
   id: string;
-  mounted: Callback;
-  unmounted: Callback;
+  onMounted: Callback;
+  onUnmounted: Callback;
 };
 
 /**
@@ -31,7 +31,7 @@ export default class TurboCtrl {
         const el = document.getElementById(row.id);
 
         if (el) {
-          row.mounted(el);
+          row.onMounted(el);
         }
       });
 
@@ -44,14 +44,14 @@ export default class TurboCtrl {
         const el = document.getElementById(row.id);
 
         if (el) {
-          row.unmounted(el);
+          row.onUnmounted(el);
         }
       });
     });
   }
 
   /** ターボコンテナ用のセットアップ */
-  setupTurboContainer(id: string, mounted: Callback, unmounted: Callback) {
+  setupTurboContainer(id: string, onMounted: Callback, onUnmounted: Callback) {
     this.pageList.forEach((row) => {
       if (row.id === id)
         throw new Error(`ターボコンテナIDが重複しています。id: ${id}`);
@@ -59,13 +59,13 @@ export default class TurboCtrl {
 
     this.pageList.push({
       id,
-      mounted,
-      unmounted,
+      onMounted,
+      onUnmounted,
     });
 
     if (this.isInit) {
       const el = document.getElementById(id);
-      if (el) mounted(el);
+      if (el) onMounted(el);
     }
   }
 }

@@ -12,7 +12,7 @@ use function App\Helpers\route;
 <body>
     <a href="{{ route('home') }}">
         <h1 class="text-3xl font-bold text-gray-100 p-4 bg-slate-400">
-            Vite + Tailwind v3 OK
+            My Site
         </h1>
     </a>
 

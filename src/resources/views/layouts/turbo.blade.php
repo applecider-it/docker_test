@@ -6,8 +6,7 @@ use function App\Helpers\route;
 <html lang="ja">
 
 <head>
-    @include('layouts.partials.head')
-    <script type="module" src="{{ ViteService::asset('resources/js/entrypoints/turbo.ts') }}"></script>
+    @include('layouts.partials.head_turbo')
 </head>
 
 <body>
