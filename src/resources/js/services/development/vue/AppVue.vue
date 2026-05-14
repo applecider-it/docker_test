@@ -21,7 +21,9 @@ const test = () => {
       <div>val1: {{ val1 }}</div>
     </div>
     <div>
-      <div v-if="true">IF1</div>
+      <template v-if="true">
+        <div>IF1</div>
+      </template>
       <div v-if="false">IF2 x</div>
       <div v-else>IF2</div>
     </div>
