@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef } from "react";
+import Parts from "./app-react/Parts";
 
 export default function AppReact() {
+  console.log('AppReact');
+
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+
   const [val1, setVal1] = useState<number>(1);
 
   const initailVal2 = 1;
@@ -50,6 +56,18 @@ export default function AppReact() {
               idx: {idx}. value: {value}.
             </div>
           ))}
+        </div>
+
+        <div>
+          <p>title: {title}</p>
+          <p>content: {content}</p>
+
+          <Parts
+            title={title}
+            setTitle={setTitle}
+            content={content}
+            setContent={setContent}
+          />
         </div>
       </div>
     </>

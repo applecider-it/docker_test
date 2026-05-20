@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import Parts from "./app-vue/Parts.vue";
+
+console.log("AppVue");
+
+const title = ref<string>("");
+const content = ref<string>("");
 
 const val1 = ref<number>(1);
 
@@ -31,6 +37,12 @@ const test = () => {
       <div v-for="(value, idx) in list" :key="value">
         idx: {{ idx }}. value: {{ value }}.
       </div>
+    </div>
+    <div>
+      <p>title: {{ title }}</p>
+      <p>content: {{ content }}</p>
+
+      <Parts v-model:title="title" v-model:content="content" />
     </div>
   </div>
 </template>
